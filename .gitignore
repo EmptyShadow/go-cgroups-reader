@@ -1,0 +1,5 @@
+vendor/
+.idea/
+.vscode/
+.vimrc/
+.DS_Store/
