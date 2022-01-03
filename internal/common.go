@@ -16,7 +16,7 @@ func IsExistsFile(path string) bool {
 func ReadInt64FromFile(path string) (int64, error) {
 	line, err := readFirstLine(path)
 	if err != nil {
-		return 0, fmt.Errorf("read first line")
+		return 0, fmt.Errorf("read first line: %w", err)
 	}
 
 	v, err := strconv.ParseInt(line, 10, 64)
@@ -30,7 +30,7 @@ func ReadInt64FromFile(path string) (int64, error) {
 func ReadUInt64FromFile(path string) (uint64, error) {
 	line, err := readFirstLine(path)
 	if err != nil {
-		return 0, fmt.Errorf("read first line")
+		return 0, fmt.Errorf("read first line: %w", err)
 	}
 
 	v, err := strconv.ParseUint(line, 10, 64)

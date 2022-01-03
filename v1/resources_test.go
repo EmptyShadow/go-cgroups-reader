@@ -13,7 +13,7 @@ import (
 func Test_ReadResources_NotExists(t *testing.T) {
 	requiring := require.New(t)
 
-	_, enabled, err := cgroupsreader.ReadResources("/", "")
+	_, enabled, err := cgroupsreader.ReadResources("/not_exists", "")
 	requiring.NoError(err)
 	requiring.False(enabled)
 }
@@ -37,7 +37,7 @@ func Test_ReadResources(t *testing.T) {
 func Test_ReadCPUResources_NotExists(t *testing.T) {
 	requiring := require.New(t)
 
-	_, enabled, err := cgroupsreader.ReadCPUResources("/", "")
+	_, enabled, err := cgroupsreader.ReadCPUResources("/not_exists", "")
 	requiring.NoError(err)
 	requiring.False(enabled)
 }
@@ -59,7 +59,7 @@ func Test_ReadCPUResources(t *testing.T) {
 func Test_ReadMemoryResources_NotExists(t *testing.T) {
 	requiring := require.New(t)
 
-	_, enabled, err := cgroupsreader.ReadMemoryResources("/", "")
+	_, enabled, err := cgroupsreader.ReadMemoryResources("/not_exists", "")
 	requiring.NoError(err)
 	requiring.False(enabled)
 }
